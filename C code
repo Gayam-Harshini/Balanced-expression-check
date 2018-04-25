@@ -1,0 +1,58 @@
+int compare(char a, char b)
+{
+  if ((a=='('&& b==')')|| (a=='['&& b==']') || (a=='{'&& b=='}'))
+    return 1;
+  /*if ((a=='[' )&& (b==']'))
+    return 1;
+  if ((a=='{' )&& (b=='}'))
+    return 1;
+  if ((a=='(' )&& (b==')'))
+    return 1;*/
+
+  else 
+    return 0;
+}
+
+int main()
+{
+  char str[20];
+  int count=0, top=-1, n=5;
+  scanf("%s", str);
+  count = strlen(str);
+  char stack[count];
+  for (int i = 0; i < count; i++)
+  {
+    if (str[i]=='('||str[i]=='{'||str[i]=='[')
+    {
+      top++;
+      stack[top] = str[i];
+    }
+
+    else if (str[i]==')'||str[i]=='}'||str[i]==']')
+    {
+      if (top!=-1)
+      {
+        n = compare(stack[top], str[i]);
+        if (n==1)
+        {
+        top--;
+        }
+      }
+      
+      else
+      {
+        printf("Unbalanced string!!\n");
+        return 0;
+      }
+    }
+  }
+
+  if (top==-1)
+  {
+    printf("Balanced string!!\n");
+  }
+  else
+    printf("Unbalanced string!!\n");
+
+  return 0;
+}
