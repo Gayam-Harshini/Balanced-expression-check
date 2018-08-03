@@ -15,8 +15,8 @@ int compare(char a, char b)
   else 
     return 0;
 }
-//fgfgfgfg
-//jdweidiheifhew
+
+
 int main()
 {
   char str[20];
