@@ -41,6 +41,11 @@ int main()
         {
         top--;
         }
+        else
+        {
+        printf("Unbalanced string!!\n");
+        return 0;
+        }
       }
       
       else
